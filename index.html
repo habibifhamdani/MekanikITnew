@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MekanikIT</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="icon" href="assets/img/MekanikIT_logo.svg" />
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="assets/css/css_reset.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="navbar z-3">
+      <a href="#">
+        <img
+          id="navbar_logo"
+          src="assets/img/LogoFinal_transparent.png"
+          alt="Logo"
+        />
+      </a>
+      <div class="navbar_right1">
+        <a href="#" class="nav_link p1 mx-2">Home</a>
+        <a href="#services" class="nav_link p1 mx-2">Services</a>
+        <a href="#portfolio" class="nav_link p1 mx-2">Portfolio</a>
+        <a href="#contact" class="nav_link p1 mx-2">Contact</a>
+      </div>
+      <a href="#contact" class="navbar_right1 btn_hero1">
+        <p>Hubungi kami!</p>
+      </a>
+      <div class="navbar_right2">
+        <a
+          class="d-flex justify-content-center align-items-center"
+          style="
+            width: 50px;
+            height: 50px;
+            padding: 0;
+            background-color: #ff415c;
+            color: white;
+            border: none;
+          "
+        >
+          <i class="bi bi-chat-text-fill"></i>
+        </a>
+        <button class="navbar_right2" onclick="toggleMenu()">
+          <i id="burger" class="bi bi-three-dots-vertical ps-3"></i>
+        </button>
+      </div>
+      <div id="mobileMenu" class="mobile-menu">
+        <a href="#">Home</a>
+        <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="hero">
+      <div
+        class="container-xxl d-flex flex-column justify-content-center align-items-center text-center"
+      >
+        <h1 class="h1_hero">
+          Solusi <span style="color: var(--tertiary_darker)">digital</span> andalan untuk
+          efisiensi berkelanjutan
+        </h1>
+        <span style="height: 20px"></span>
+        <p class="p2">
+          Menghubungkan ide dan teknologi inovatif<br />
+          dalam setiap langkah inovasi dan kolaborasi dinamis.
+        </p>
+        <span style="height: 40px"></span>
+        <div class="d-flex flex-row">
+          <a href="https://wa.me/6287781896345?text=Halo%2C%20Saya%20ingin%20berkonsultasi%20dengan%20Anda" target="_blank" class="btn_hero1 d-flex">
+            <p class="me-2">Konsultasi Langsung</p>
+            <i class="bi bi-whatsapp"></i>
+          </a>
+          <span style="width: 20px"></span>
+          <a href="#services" class="btn_hero2">
+            <p>Jasa Kami</p>
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="invoice_bg mx-auto d-flex flex-column justify-content-center">
+      <div
+      class="logos row d-flex flex-row align-self-center justify-content-evenly h-auto w-75 container-xxl mx-auto mx-sm-1 pt-4"
+      style="min-height: 100px"
+    >
+      <img class="col-md-4 col-12" src="assets/img/kkp.png" alt="" />
+      <img class="col-md-4 col-12" src="assets/img/gef.png" alt="" />
+      <img class="col-lg-4 col-md-5 col-12" src="assets/img/usaid.png" alt="" />
+    </div>
+    <!-- <div class="m-1 d-flex achievement container-xl m-auto pt-5 pb-5">
+      <div class="mx-auto">
+        <h1 class="achievement_text">
+          Selama <span style="color: #127aff">6+ tahun</span> kami telah
+          merealisasikan proyekmu dan kami bangga atas hal itu!
+        </h1>
+      </div>
+      <div class="achievement_point d-flex">
+        <div class="achievement_row d-flex">
+          <div class="d-flex flex-column" style="width: 140px">
+            <h1>17+</h1>
+            <p class="font-weight-bold">Solusi IT custom</p>
+            <p></p>
+          </div>
+
+          <span style="width: 20px"></span>
+          <div class="d-flex flex-column" style="width: 140px">
+            <h1>3+</h1>
+            <p class="font-weight-bold">Years' Cliet engagement</p>
+            <p></p>
+          </div>
+        </div>
+        <span style="height: 20px"></span>
+        <div class="achievement_row d-flex">
+          <div class="d-flex flex-column" style="width: 140px">
+            <h1>66%</h1>
+            <p class="font-weight-bold">Senior programmer</p>
+            <p></p>
+          </div>
+
+          <span style="width: 20px"></span>
+          <div class="d-flex flex-column" style="width: 140px">
+            <h1>98%</h1>
+            <p class="font-weight-bold">Kepuasan klien</p>
+            <p></p>
+          </div>
+        </div>
+      </div>
+    </div> -->
+    <div class="h-auto pt-5 pb-5 d-flex flex-column">
+      <div class="row d-flex container-lg flex-md-row flex-column justify-content-center align-items-center align-self-center">
+        <div class="col-md-5 col-9 text-md-start text-center pb-3">
+          <h1 class="h1_hero1">
+            Selama <span style="color: #127aff">6+ tahun</span> kami telah
+            merealisasikan proyekmu dan kami bangga atas hal itu!
+          </h1>
+        </div>
+        <div class="col-md-6 col-10 row d-flex justify-content-md-start justify-content-center">
+          <div class="col-md-4 col-6 p-md-2 p-0 text-md-start text-center">
+            <h1>17+</h1>
+            <p class="font-weight-bold">Solusi IT custom</p>
+          </div>
+          <div class="col-md-4 col-6 p-md-2 p-0 text-md-start text-center">
+              <h1>66%</h1>
+              <p class="font-weight-bold">Senior programmer</p>
+          </div>
+          <div class="col-md-4 col-6 p-md-2 p-0 text-md-start text-center">
+            <h1>99%</h1>
+            <p class="font-weight-bold">Kepuasan klien</p>
+          </div>
+          <div class="col-md-4 col-6 p-md-2 p-0 text-md-start text-center">
+            <h1>20+</h1>
+            <p class="font-weight-bold">Tahun pengalaman industri</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <section id="services">
+      <div class="services pb-5">
+        <div class="container-lg d-flex flex-column align-items-center pt-5 pb-5 pe-0 ps-0" style="max-width: 1140px;">
+          <h1 class="h1_hero mb-5 text-center">
+            <span style="color: #60caf6">Jasa</span> yang kami sediakan
+          </h1>
+          <p class="p1 container-lg p-lg-0 px-4">
+            Kami adalah MekanikIT, perusahaan pengembangan perangkat lunak yang
+            memanfaatkan teknologi untuk menciptakan solusi kustom berdasarkan
+            kebutuhan dan tantangan klien. Dipandu oleh prinsip transparansi,
+            kolaborasi erat, keahlian, dan proses manajemen serta pengembangan
+            yang mapan, kami memberikan layanan terbaik kepada klien kami. ss
+          </p>
+        </div>
+        <div class="service1">
+          <div class="d-flex flex-column" style="width: 30%">
+            <button
+              id="videogame2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Pengembangan Video Game')"
+            >
+              <p class="p1">Aktivitas Pengembangan Video Game</p>
+            </button>
+            <button
+              id="ecommerce2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)')"
+            >
+              <p class="p1">
+                Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet
+                (E-Commerce)
+              </p>
+            </button>
+            <button
+              id="pemrogramanKomputer2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Pemrograman Komputer Lainnya')"
+            >
+              <p class="p1">Aktivitas Pemrograman Komputer Lainnya</p>
+            </button>
+            <button
+              id="konsultasiKomputer2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya')"
+            >
+              <p class="p1">
+                Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer
+                Lainnya
+              </p>
+            </button>
+            <button
+              id="teknologiInformasi2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya')"
+            >
+              <p class="p1">
+                Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya
+              </p>
+            </button>
+            <button
+              id="portalWeb2"
+              class="btn_service"
+              onclick="updateService('Portal Web dan/atau Platform Digital dengan Tujuan Komersial')"
+            >
+              <p class="p1">
+                Portal Web dan/atau Platform Digital dengan Tujuan Komersial
+              </p>
+            </button>
+            <button
+              id="konsultasiManajemen2"
+              class="btn_service"
+              onclick="updateService('Aktivitas Konsultasi Manajemen Lainnya')"
+            >
+              <p class="p1">Aktivitas Konsultasi Manajemen Lainnya</p>
+            </button>
+          </div>
+          <div class="service_scroll">
+            <div id="service_content" class="service_content">
+              <p id="service_type" class="h1 mb-4 text-start">Aktivitas Pengembangan Video Game</p>
+              <p id="service_kbli" class="p1">Kode KBLI: 62011</p>
+              <p id="service_description" class="p1 mb-4" style="width: 100%">
+                MekanikIT mengembangkan video game berkualitas tinggi yang memberikan pengalaman imersif dan inovatif. Kami merancang, mengembangkan, dan mengoptimalkan game untuk berbagai platform, dengan fokus pada gameplay yang menyenangkan, grafis yang memukau, dan performa yang lancar. Tim kami ahli dalam menciptakan dunia digital yang menarik dan mendalam, memenuhi ekspektasi pemain di seluruh dunia.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="service2 mx-auto">
+          <div class="d-flex flex-column mx-auto" style="width: 85%">
+            <button
+              id="videogame"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Pengembangan Video Game')"
+            >
+              <p class="p1">Aktivitas Pengembangan Video Game</p>
+            </button>
+            <div
+              id="Aktivitas Pengembangan Video Game"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 62011</p>
+              <p class="p1">
+                MekanikIT mengembangkan video game berkualitas tinggi yang
+                memberikan pengalaman imersif dan inovatif. Kami merancang,
+                mengembangkan, dan mengoptimalkan game untuk berbagai platform,
+                dengan fokus pada gameplay yang menyenangkan, grafis yang
+                memukau, dan performa yang lancar. Tim kami ahli dalam
+                menciptakan dunia digital yang menarik dan mendalam, memenuhi
+                ekspektasi pemain di seluruh dunia.
+              </p>
+            </div>
+
+            <button
+              id="ecommerce"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)')"
+            >
+              <p class="p1">
+                Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet
+                (E-Commerce)
+              </p>
+            </button>
+            <div
+              id="Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 62012</p>
+              <p class="p1">
+                Kami membantu bisnis untuk berkembang di dunia digital dengan
+                menyediakan solusi e-commerce yang efisien dan mudah digunakan.
+                Dari pembuatan toko online hingga sistem pembayaran yang aman,
+                MekanikIT merancang platform e-commerce yang dapat diandalkan
+                untuk meningkatkan penjualan dan mempermudah pengalaman
+                pelanggan. Kami memastikan bahwa setiap fitur didesain dengan
+                baik untuk mendukung pertumbuhan bisnis klien kami.
+              </p>
+            </div>
+
+            <button
+              id="pemrogramanKomputer"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Pemrograman Komputer Lainnya')"
+            >
+              <p class="p1">Aktivitas Pemrograman Komputer Lainnya</p>
+            </button>
+            <div
+              id="Aktivitas Pemrograman Komputer Lainnya"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 62019</p>
+              <p class="p1">
+                MekanikIT memiliki keahlian dalam berbagai jenis pemrograman
+                komputer yang mendalam, mulai dari pengembangan perangkat lunak
+                kustom hingga aplikasi web. Kami menyediakan solusi teknologi
+                yang dapat disesuaikan dengan kebutuhan spesifik klien, baik
+                untuk bisnis kecil, menengah, hingga perusahaan besar. Fokus
+                kami adalah menciptakan aplikasi yang efisien, aman, dan mudah
+                diintegrasikan dengan sistem yang sudah ada.
+              </p>
+            </div>
+
+            <button
+              id="konsultasiKomputer"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya')"
+            >
+              <p class="p1">
+                Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer
+                Lainnya
+              </p>
+            </button>
+            <div
+              id="Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 62029</p>
+              <p class="p1">
+                Sebagai ahli dalam teknologi informasi, MekanikIT menawarkan
+                layanan konsultasi yang membantu perusahaan merancang,
+                mengelola, dan mengoptimalkan infrastruktur teknologi mereka.
+                Kami memberikan saran terkait pemilihan perangkat keras dan
+                perangkat lunak yang tepat, serta solusi manajemen fasilitas
+                komputer untuk memastikan operasional teknologi berjalan efisien
+                dan hemat biaya.
+              </p>
+            </div>
+
+            <button
+              id="teknologiInformasi"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya')"
+            >
+              <p class="p1">
+                Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya
+              </p>
+            </button>
+            <div
+              id="Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 62090</p>
+              <p class="p1">
+                MekanikIT menyediakan berbagai layanan terkait teknologi
+                informasi yang mendukung bisnis agar tetap kompetitif. Kami
+                menawarkan solusi IT yang mencakup pengelolaan jaringan,
+                keamanan siber, serta pengembangan dan pemeliharaan aplikasi
+                berbasis teknologi terbaru. Tujuan kami adalah memberikan solusi
+                yang membantu perusahaan mengatasi tantangan teknologi dan
+                mencapai efisiensi operasional.
+              </p>
+            </div>
+
+            <button
+              id="portalWeb"
+              class="btn_service"
+              onclick="toggleDropdown('Portal Web dan/atau Platform Digital dengan Tujuan Komersial')"
+            >
+              <p class="p1">
+                Portal Web dan/atau Platform Digital dengan Tujuan Komersial
+              </p>
+            </button>
+            <div
+              id="Portal Web dan/atau Platform Digital dengan Tujuan Komersial"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 63122</p>
+              <p class="p1">
+                Kami mengembangkan portal web dan platform digital yang
+                dirancang khusus untuk kebutuhan komersial, baik itu untuk
+                mempermudah interaksi antara pelanggan dan penyedia layanan,
+                atau untuk mendukung kegiatan bisnis lainnya. Dengan pendekatan
+                desain yang user-friendly dan responsif, platform kami dirancang
+                untuk memberikan pengalaman digital yang optimal dan
+                meningkatkan keterlibatan pengguna.
+              </p>
+            </div>
+
+            <button
+              id="konsultasiManajemen"
+              class="btn_service"
+              onclick="toggleDropdown('Aktivitas Konsultasi Manajemen Lainnya')"
+            >
+              <p class="p1">Aktivitas Konsultasi Manajemen Lainnya</p>
+            </button>
+            <div
+              id="Aktivitas Konsultasi Manajemen Lainnya"
+              class="dropdown_content"
+              style="display: none"
+            >
+              <p class="p1">Kode KBLI: 70209</p>
+              <p class="p1">
+                MekanikIT tidak hanya berfokus pada teknologi, tetapi juga
+                memberikan layanan konsultasi manajemen untuk membantu
+                perusahaan merancang strategi dan sistem yang efisien. Kami
+                memberikan wawasan dan solusi untuk meningkatkan kinerja
+                operasional, perencanaan jangka panjang, serta mengoptimalkan
+                pengelolaan proyek dan sumber daya manusia di perusahaan klien.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div id="testimonial" class="testimonial">
+        <div class="testimonial_container">
+          <div class="testimonial_subject">
+            <img src="assets/img/uhh.webp" alt="" />
+            <p>Dontavius</p>
+            <p>CEO of Roblox</p>
+          </div>
+          <div class="testimonial_content">
+            <p>
+              I always like to have options and alternatives when making major
+              decisions. MekanikIT provides that flexibility — ensuring every
+              project we take on is both functional and future-ready. With a
+              strong belief in collaboration and transparency, they aim to
+              become not just your service provider, but your long-term
+              technology partner.
+            </p>
+          </div>
+        </div>
+      </div> -->
+      <div class="tech_stack">
+        <div class="container-xl p-4 d-flex flex-column">
+          <h1 class="h1_hero1 pb-5 border-bottom border-black m-0"> 
+            <span style="color: #60caf6">Core tech stack</span> kami
+          </h1>
+          <div
+            id="backend"
+            class="row d-flex align-items-center border-bottom m-0 pt-4 pb-4 border-black"
+          >
+            <div class="col-lg-3">
+              <p class="p1 text-black pb-md-0 pb-4 text-lg-center text-start">Backend</p>
+            </div>
+            <div class="row d-flex flex-row col-lg-9 m-auto">
+              <img
+                src="assets/img/php.svg"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+              <img
+                src="assets/img/golang.png"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+              <img
+                src="assets/img/python.png"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            id="frontend"
+            class="row d-flex align-items-center border-bottom m-0 pt-4 pb-4 border-black"
+          >
+            <div class="col-lg-3">
+              <p class="p1 text-black pb-md-0 pb-4 text-lg-center text-start">Frontend</p>
+            </div>
+            <div class="row d-flex flex-row col-lg-9 m-auto p-4">
+              <img
+              src="assets/img/js.png"
+              class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+              alt=""
+              />
+              <img
+                src="assets/img/jquery.svg"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+              <img
+                src="assets/img/bootstrap.svg"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+            </div>
+          </div>
+          <div
+            id="mobile"
+            class="row d-flex align-items-center border-bottom m-0 pt-4 pb-4 border-black"
+          >
+            <div class="col-lg-3">
+              <p class="p1 text-black pb-md-0 pb-4 text-lg-center text-start">Mobile</p>
+            </div>
+            <div class="row d-flex flex-row col-lg-9 m-auto p-4">
+              <img
+                src="assets/img/flutter.png"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+              <img
+                src="assets/img/ios.png"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+              <img
+                src="assets/img/android.png"
+                class="col-lg-3 col-sm-4 col-6 mb-lg-0 mb-2"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio">
+      <div class="portfolio container-xl p-4">
+        <h1 class="h1_hero text-dark text-sm-start text-center fs-1">Portfolio</h1>
+        <span class="d-flex mb-4"></span>
+        <ol>
+          <li id="2019">
+            2019
+            <ol type="a">
+              <li>PERBAIKAN MODUL APLIKASI SIPEPI
+                (2251/KU.110/D.4/PPK/VI/2019) - KKP PDK</li>
+              <li>PENYEDERHANAAN DAN INTEGRASI DESAIN WEBSITE DIREKTORAT
+                PERIZINAN DAN KENELAYANAN (2724/KU.110/D.4/PPK/VII/2019)
+                - KKP PDK</li>
+              <li>UPDATING SIMKADA DAN KONEKTIVITAS LKU/LKP
+                (3260/KU.110/D.4/PPK/VIII/2019) – KKP PDK</li>
+            </ol>
+          </li>
+          <li id="2020">
+            2020
+            <ol type="a">
+              <li>UPDATING SILAT 2020 (2632 /KU.110/D.4/PPK/VIII/2020) - KKP
+                PDK</li>
+              <li>UPDATING SIMKADA 2020 (3401 /KU.110/D.4/PPK/X/2020) - KKP
+                PDK</li>
+              <li>MODUL SMARTCARD PERIZINAN USAHA PERIKANAN TANGKAP
+                (4051/KU.110/D.4/PPK/XI/2020) - KKP PDK
+                </li>
+            </ol>
+          </li>
+          <li id="2021">
+            2021
+            <ol type="a">
+              <li>UPDATING APLIKASI SILAT DALAM RANGKA PERUBAHAN
+                NORMA,STANDAR, PROSEDUR DAN KRITERIA TERKAIT
+                PENERBITAN PERATURAN PEMERINTAH NO 5 TAHUN 2021
+                (2784/KU.110/D.4/PPK/V/2021) - KKP PDK</li>
+              <li>UPDATING APLIKASI SIMKADA DALAM RANGKA PERUBAHAN
+                NORMA,STANDAR, PROSEDUR DAN KRITERIA TERKAIT
+                PENERBITAN PERATURAN PEMERINTAH NO 5 TAHUN 2021
+                (5038/KU.110/D.4/PPK/IX/2021) - KKP PDK</li>
+              <li>PENAMBAHAN MODUL PERIZINAN RUMPON DAN PENERAPAN
+                PNBP PASCA PRODUKSI PADA APLIKASI SILAT
+                (5994/KU.110/D.4/PPK/X/2021) - KKP PDK</li>
+            </ol>
+          </li>
+          <li id="2022">
+            2022
+            <ol type="a">
+              <li>APLIKASI UNTUK PENDATAAN PENDARATAN IKAN DALAM
+                RANGKA PELAKSANAAN PNBP PASCA PRODUKSI DAN SISTEM
+                KONTRAK - KKP MONEV PELABUHAN</li>
+              <li>MODUL PENGEMBANGAN SISTEM KONTRAK PADA APLIKASI SILAT
+                - PDK</li>
+              <li>MODUL PENGEMBANGAN APLIKASI MOBILE SMART CARD - PDK</li>
+              <li>MODUL PENGEMBANGAN SIPR - PDK</li>
+              <li>PENGEMBANGAN SISTEM INFORMASI PELABUHAN PERIKANAN -
+                PIPP</li>
+              <li>PENGEMBANGAN APLIKASI SILAT - PDK</li>
+              <li>PENGEMBANGAN APLIKASI SIMKADA - PDK</li>
+            </ol>
+          </li>
+          <li id="2023">
+            2023
+            <ol type="a">
+              <li>PENGEMBANGAN MODUL PENDATAAN PRODUKSI IKAN (PIPP)
+                BERBASIS MOBILE</li>
+            </ol>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section id="contact">
+      <div class="container-xxl p-lg-5 p-0 mb-5">
+        <div class="contact d-flex flex-column ps-4 pt-5 pb-5 pe-4">
+          <h1 class="h1_hero mb-5" style="font-size: 56px">Hubungi kami!</h1>
+          <p class="p1">
+            Untuk setiap pertanyaan anda, silakan kirim surel ke
+            <a href="mailto:admin@mekanikit.com">admin@mekanikit.com</a>
+          </p>
+
+          <form action="send.php" method="POST" class="mt-4 d-flex flex-column">
+            <div class="mb-3">
+              <label for="nama" class="form-label p1"
+                >Nama<span style="color: red">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="nama"
+                name="nama"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label p1"
+                >Surel<span style="color: red">*</span></label
+              >
+              <input
+                type="email"
+                class="form-control"
+                id="email"
+                name="email"
+                required
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="pesan" class="form-label p1"
+                >Pesan<span style="color: red">*</span></label
+              >
+              <textarea
+                class="form-control"
+                id="pesan"
+                name="pesan"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn_hero1 align-self-end">
+              Kirim
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <div class="d-flex flex-column align-items-center px-xl-0 px-3 py-5">
+        <img
+        src="assets/img/LogoFinal_white_transparent.png"
+        class="object-fit-contain align-self-start mb-4"
+        style="height: 100px;"
+        alt=""
+      />
+      <div class="footer_container container-xl">
+        <div class="footer_column pb-md-0 pb-4">
+          <p class="fw-bold">Alamat:</p>
+          <p>Komplek Lipi 1 (Puri Citayam Permai) B11/9</p>
+          <p>08170260380</p>
+          <p class="fw-bold">Pusat Pengembangan:</p>
+          <p>Citayam, Jawa Barat</p>
+          <p><a href="mailto:admin@MekanikIT.com">admin@MekanikIT.com</a></p>
+        </div>
+        <div class="footer_column footer_service1 pb-md-0 pb-4">
+          <p class="fw-bold">Services</p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#videogame2"
+              onclick="updateService('Aktivitas Pengembangan Video Game')"
+              >Aktivitas Pengembangan Video Game</a
+            >
+          </p>
+          <p>
+            <a
+              href="#ecommerce2"
+              onclick="updateService('Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)')"
+              >Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet
+              (E-Commerce)</a
+            >
+          </p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#pemrogramanKomputer2"
+              onclick="updateService('Aktivitas Pemrograman Komputer Lainnya')"
+              >Aktivitas Pemrograman Komputer Lainnya</a
+            >
+          </p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#konsultasiKomputer2"
+              onclick="updateService('Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya')"
+              >Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer
+              Lainnya</a
+            >
+          </p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#konsultasiKomputer2"
+              onclick="updateService('Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya')"
+              >Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya</a
+            >
+          </p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#konsultasiKomputer2"
+              onclick="updateService('Portal Web dan/atau Platform Digital dengan Tujuan Komersial')"
+              >Portal Web dan/atau Platform Digital dengan Tujuan Komersial</a
+            >
+          </p>
+          <p>
+            <a
+              class="footer_service1_a"
+              href="#konsultasiKomputer2"
+              onclick="updateService('Aktivitas Konsultasi Manajemen Lainnya')"
+              >Aktivitas Konsultasi Manajemen Lainnya</a
+            >
+          </p>
+        </div>
+        <div class="footer_column footer_service2">
+          <p>Services</p>
+          <p><a href="#videogame">Aktivitas Pengembangan Video Game</a></p>
+          <p>
+            <a href="#ecommerce"
+              >Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet
+              (E-Commerce)</a
+            >
+          </p>
+          <p>
+            <a href="#pemrogramanKomputer"
+              >Aktivitas Pemrograman Komputer Lainnya</a
+            >
+          </p>
+          <p>
+            <a href="#konsultasiKomputer"
+              >Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer
+              Lainnya</a
+            >
+          </p>
+          <p>
+            <a href="#teknologiInformasi"
+              >Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya</a
+            >
+          </p>
+          <p>
+            <a href="#portalWeb"
+              >Portal Web dan/atau Platform Digital dengan Tujuan Komersial</a
+            >
+          </p>
+          <p>
+            <a href="#konsultasiManajemen"
+              >Aktivitas Konsultasi Manajemen Lainnya</a
+            >
+          </p>
+        </div>
+        <div class="footer_column pb-md-0 pb-4">
+          <p class="fw-bold">Technologies</p>
+          <p><a href="#backend">Backend</a></p>
+          <p><a href="#frontend">Frontend</a></p>
+          <p><a href="#mobile">Mobile</a></p>
+        </div>
+        <div class="footer_column">
+          <p class="fw-bold">Portfolio</p>
+          <p><a href="#2019">2019</a></p>
+          <p><a href="#2020">2020</a></p>
+          <p><a href="#2021">2021</a></p>
+          <p><a href="#2022">2022</a></p>
+          <p><a href="#2023">2023</a></p>
+        </div>
+      </div>
+      <div class="footer_bottom">
+      <div class="d-flex flex-md-row flex-column justify-content-md-end justify-content-start align-items-md-start">
+        <p class="fs-6 me-md-2">© 2025 MekanikIT™ All rights reserved. (R)</p>
+      </div>
+      </div>
+    </div>
+
+    <!-- navbar scroll -->
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        const logoImg = document.querySelector("#navbar_logo");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const burger = document.querySelector("#burger");
+
+        // Only apply scroll behavior if mobile menu is NOT active
+        if (!mobileMenu.classList.contains("active")) {
+          if (window.scrollY > 0) {
+            navbar.classList.add("active");
+            if (logoImg) {
+              logoImg.src = "assets/img/LogoFinal_transparent.png";
+            }
+          } else {
+            navbar.classList.remove("active");
+            if (logoImg) {
+              logoImg.src = "assets/img/LogoFinal_white_transparent.png";
+            }
+          }
+        } else {
+          navbar.classList.add("active");
+          if (logoImg) {
+            logoImg.src = "assets/img/LogoFinal_transparent.png";
+            burger.classList.remove("bi-three-dots-vertical");
+            burger.classList.add("bi-three-dots");
+          }
+        }
+      });
+
+      // Set default active button on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        const logoImg = document.querySelector("#navbar_logo");
+        if (logoImg) {
+          logoImg.src = "assets/img/LogoFinal_white_transparent.png";
+        }
+      });
+    </script>
+
+    <!--checks for section and updates navbar -->
+    <script>
+      const sections = document.querySelectorAll("section[id]");
+      const navLinks = document.querySelectorAll(".nav_link");
+
+      window.addEventListener("scroll", () => {
+        let current = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (pageYOffset >= sectionTop - 150) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+
+    <!-- services button -->
+    <script>
+      const serviceData = {
+        "Aktivitas Pengembangan Video Game": {
+          description:
+            "MekanikIT mengembangkan video game berkualitas tinggi yang memberikan pengalaman imersif dan inovatif. Kami merancang, mengembangkan, dan mengoptimalkan game untuk berbagai platform, dengan fokus pada gameplay yang menyenangkan, grafis yang memukau, dan performa yang lancar. Tim kami ahli dalam menciptakan dunia digital yang menarik dan mendalam, memenuhi ekspektasi pemain di seluruh dunia.",
+          kbli: "Kode KBLI: 62011",
+          linkText: "Video Game",
+          linkHref: "#",
+        },
+        "Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)":
+          {
+            description:
+              "Kami membantu bisnis untuk berkembang di dunia digital dengan menyediakan solusi e-commerce yang efisien dan mudah digunakan. Dari pembuatan toko online hingga sistem pembayaran yang aman, MekanikIT merancang platform e-commerce yang dapat diandalkan untuk meningkatkan penjualan dan mempermudah pengalaman pelanggan. Kami memastikan bahwa setiap fitur didesain dengan baik untuk mendukung pertumbuhan bisnis klien kami.",
+            kbli: "Kode KBLI: 62012",
+            linkText: "E-Commerce",
+            linkHref: "#",
+          },
+        "Aktivitas Pemrograman Komputer Lainnya": {
+          description:
+            "MekanikIT memiliki keahlian dalam berbagai jenis pemrograman komputer yang mendalam, mulai dari pengembangan perangkat lunak kustom hingga aplikasi web. Kami menyediakan solusi teknologi yang dapat disesuaikan dengan kebutuhan spesifik klien, baik untuk bisnis kecil, menengah, hingga perusahaan besar. Fokus kami adalah menciptakan aplikasi yang efisien, aman, dan mudah diintegrasikan dengan sistem yang sudah ada.",
+          kbli: "Kode KBLI: 62019",
+          linkText: "IT Consulting",
+          linkHref: "#",
+        },
+        "Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya":
+          {
+            description:
+              "Sebagai ahli dalam teknologi informasi, MekanikIT menawarkan layanan konsultasi yang membantu perusahaan merancang, mengelola, dan mengoptimalkan infrastruktur teknologi mereka. Kami memberikan saran terkait pemilihan perangkat keras dan perangkat lunak yang tepat, serta solusi manajemen fasilitas komputer untuk memastikan operasional teknologi berjalan efisien dan hemat biaya.",
+            kbli: "Kode KBLI: 62029",
+            linkText: "IT Consulting",
+            linkHref: "#",
+          },
+        "Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya": {
+          description:
+            "MekanikIT menyediakan berbagai layanan terkait teknologi informasi yang mendukung bisnis agar tetap kompetitif. Kami menawarkan solusi IT yang mencakup pengelolaan jaringan, keamanan siber, serta pengembangan dan pemeliharaan aplikasi berbasis teknologi terbaru. Tujuan kami adalah memberikan solusi yang membantu perusahaan mengatasi tantangan teknologi dan mencapai efisiensi operasional.",
+          kbli: "Kode KBLI: 62090",
+          linkText: "IT Consulting",
+          linkHref: "#",
+        },
+        "Portal Web dan/atau Platform Digital dengan Tujuan Komersial": {
+          description:
+            "Kami mengembangkan portal web dan platform digital yang dirancang khusus untuk kebutuhan komersial, baik itu untuk mempermudah interaksi antara pelanggan dan penyedia layanan, atau untuk mendukung kegiatan bisnis lainnya. Dengan pendekatan desain yang user-friendly dan responsif, platform kami dirancang untuk memberikan pengalaman digital yang optimal dan meningkatkan keterlibatan pengguna.",
+          kbli: "Kode KBLI: 63122",
+          linkText: "IT Consulting",
+          linkHref: "#",
+        },
+        "Aktivitas Konsultasi Manajemen Lainnya": {
+          description:
+            "MekanikIT tidak hanya berfokus pada teknologi, tetapi juga memberikan layanan konsultasi manajemen untuk membantu perusahaan merancang strategi dan sistem yang efisien. Kami memberikan wawasan dan solusi untuk meningkatkan kinerja operasional, perencanaan jangka panjang, serta mengoptimalkan pengelolaan proyek dan sumber daya manusia di perusahaan klien.",
+          kbli: " Kode KBLI: 70209",
+          linkText: "IT Consulting",
+          linkHref: "#",
+        },
+      };
+
+      function toggleDropdown(id) {
+        const content = document.getElementById(id);
+        content.style.display =
+          content.style.display === "none" ? "flex" : "none";
+      }
+
+      function updateService(serviceType) {
+        const data = serviceData[serviceType];
+        if (!data) return;
+
+        // Update content
+        document.getElementById("service_type").textContent = serviceType;
+        document.getElementById("service_description").textContent =
+          data.description;
+        document.getElementById("service_kbli").textContent = data.kbli;
+
+        const serviceButton = document.getElementById("service_button");
+        serviceButton.textContent = data.linkText;
+        serviceButton.href = data.linkHref;
+
+        // Handle active class
+        document.querySelectorAll(".btn_service").forEach((btn) => {
+          btn.classList.remove("active");
+        });
+
+        // Find and add 'active' to the clicked button
+        const buttons = document.querySelectorAll(".btn_service");
+        buttons.forEach((btn) => {
+          if (btn.textContent.trim() === serviceType) {
+            btn.classList.add("active");
+          }
+        });
+      }
+
+      // Removes 'selected' effect on dropdown, but remembers which one is last active and reapplies that again should windows resized to >768
+      let lastActiveBtn = null;
+
+      document.querySelectorAll(".btn_service").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          // Remove 'active' from all
+          document
+            .querySelectorAll(".btn_service")
+            .forEach((b) => b.classList.remove("active"));
+          // Set current as active
+          btn.classList.add("active");
+          // Remember it
+          lastActiveBtn = btn;
+        });
+      });
+
+      document.querySelectorAll(".footer_service1_a").forEach((a) => {
+        a.addEventListener("click", () => {
+          // Remove 'active' from all
+          document
+            .querySelectorAll(".btn_service")
+            .forEach((b) => b.classList.remove("active"));
+        });
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth < 768) {
+          document.querySelectorAll(".btn_service").forEach((btn) => {
+            btn.classList.remove("active");
+          });
+        } else {
+          if (lastActiveBtn) {
+            lastActiveBtn.classList.add("active");
+          }
+        }
+      });
+
+      // Set default active button on page load
+      document.addEventListener("DOMContentLoaded", () => {
+        if (window.innerWidth > 768) {
+          updateService("Aktivitas Pengembangan Video Game");
+        }
+      });
+    </script>
+
+    <!-- mobile menu -->
+    <script>
+      function toggleMenu() {
+        const navbar = document.querySelector(".navbar");
+        const burger = document.querySelector("#burger");
+        const logoImg = document.querySelector("#navbar_logo");
+        const menu = document.getElementById("mobileMenu");
+
+        menu.classList.toggle("active");
+        navbar.classList.toggle("active");
+
+        if (logoImg) {
+          if (navbar.classList.contains("active")) {
+            logoImg.src = "assets/img/LogoFinal_transparent.png";
+            burger.classList.remove("bi-three-dots-vertical");
+            burger.classList.add("bi-three-dots");
+          } else {
+            logoImg.src = "assets/img/LogoFinal_white_transparent.png";
+            burger.classList.remove("bi-three-dots");
+            burger.classList.add("bi-three-dots-vertical");
+          }
+        }
+      }
+
+      // Auto-close mobile menu on resize above 768px
+      window.addEventListener("resize", () => {
+        const burger = document.querySelector("#burger");
+        const menu = document.getElementById("mobileMenu");
+        if (window.innerWidth >= 768) {
+          menu.classList.remove("active");
+          burger.classList.remove("bi-three-dots");
+          burger.classList.add("bi-three-dots-vertical");
+        }
+      });
+    </script>
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
