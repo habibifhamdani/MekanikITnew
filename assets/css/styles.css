@@ -1,6 +1,6 @@
 :root {
     --primary: #0181B0;
-    --accent: #fdfafb ;
+    --accent: #fb8587 ;
     --accent2: #60CAF6;
     --tertiary: #434343;
     --tertiary_lighter: #515151;
@@ -294,12 +294,22 @@ body p {
     padding-bottom: 3rem;
 }
 
-.dropdown_content {
-    height: auto;
-    padding: 10px;
-    background-color: var(--tertiary_lighter);
-    display: flex;
-    flex-direction: column;
+.service2 .dropdown_content {
+  /* Keep your existing styles like padding, background-color, etc. */
+  padding: 6px 10px; /* From your existing styles */
+  background-color: var(--tertiary_lighter); /* From your existing styles */
+  display: flex; /* This is fine to keep for content layout once open */
+  flex-direction: column; /* This is fine to keep */
+
+  /* Add/Modify these for smooth animation */
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out; /* Adjust duration and easing as you like */
+  /* You could also transition padding if you want it to ease in/out:
+     transition: max-height 0.35s ease-in-out, padding-top 0.35s ease-in-out, padding-bottom 0.35s ease-in-out;
+     And then set padding-top/bottom to 0 when closed, and restore it when open.
+     For now, transitioning max-height alone is simpler and often sufficient.
+  */
 }
 
 .btn_service {
@@ -459,7 +469,7 @@ body p {
 .footer_column p a:hover,
 .footer_bottom a:hover {
     transition: 0.2s all ease-in-out;
-    color: #ff415c;
+    color: var(--accent);
 }
 
 .footer_bottom_right {

@@ -1,0 +1,44 @@
+[
+  {
+    "id": "video-game-development",
+    "title": "Aktivitas Pengembangan Video Game",
+    "kbli": "Kode KBLI: 62011",
+    "description": "MekanikIT mengembangkan video game berkualitas tinggi yang memberikan pengalaman imersif dan inovatif. Kami merancang, mengembangkan, dan mengoptimalkan game untuk berbagai platform, dengan fokus pada gameplay yang menyenangkan, grafis yang memukau, dan performa yang lancar. Tim kami ahli dalam menciptakan dunia digital yang menarik dan mendalam, memenuhi ekspektasi pemain di seluruh dunia."
+  },
+  {
+    "id": "ecommerce-development",
+    "title": "Aktivitas Pengembangan Aplikasi Perdagangan Melalui Internet (E-Commerce)",
+    "kbli": "Kode KBLI: 62012",
+    "description": "Kami membantu bisnis untuk berkembang di dunia digital dengan menyediakan solusi e-commerce yang efisien dan mudah digunakan. Dari pembuatan toko online hingga sistem pembayaran yang aman, MekanikIT merancang platform e-commerce yang dapat diandalkan untuk meningkatkan penjualan dan mempermudah pengalaman pelanggan. Kami memastikan bahwa setiap fitur didesain dengan baik untuk mendukung pertumbuhan bisnis klien kami."
+  },
+  {
+    "id": "other-programming",
+    "title": "Aktivitas Pemrograman Komputer Lainnya",
+    "kbli": "Kode KBLI: 62019",
+    "description": "MekanikIT memiliki keahlian dalam berbagai jenis pemrograman komputer yang mendalam, mulai dari pengembangan perangkat lunak kustom hingga aplikasi web. Kami menyediakan solusi teknologi yang dapat disesuaikan dengan kebutuhan spesifik klien, baik untuk bisnis kecil, menengah, hingga perusahaan besar. Fokus kami adalah menciptakan aplikasi yang efisien, aman, dan mudah diintegrasikan dengan sistem yang sudah ada."
+  },
+  {
+    "id": "computer-consultancy",
+    "title": "Aktivitas Konsultasi Komputer dan Manajemen Fasilitas Komputer Lainnya",
+    "kbli": "Kode KBLI: 62029",
+    "description": "Sebagai ahli dalam teknologi informasi, MekanikIT menawarkan layanan konsultasi yang membantu perusahaan merancang, mengelola, dan mengoptimalkan infrastruktur teknologi mereka. Kami memberikan saran terkait pemilihan perangkat keras dan perangkat lunak yang tepat, serta solusi manajemen fasilitas komputer untuk memastikan operasional teknologi berjalan efisien dan hemat biaya."
+  },
+  {
+    "id": "it-services",
+    "title": "Aktivitas Teknologi Informasi dan Jasa Komputer Lainnya",
+    "kbli": "Kode KBLI: 62090",
+    "description": "MekanikIT menyediakan berbagai layanan terkait teknologi informasi yang mendukung bisnis agar tetap kompetitif. Kami menawarkan solusi IT yang mencakup pengelolaan jaringan, keamanan siber, serta pengembangan dan pemeliharaan aplikasi berbasis teknologi terbaru. Tujuan kami adalah memberikan solusi yang membantu perusahaan mengatasi tantangan teknologi dan mencapai efisiensi operasional."
+  },
+  {
+    "id": "web-portal-commercial",
+    "title": "Portal Web dan/atau Platform Digital dengan Tujuan Komersial",
+    "kbli": "Kode KBLI: 63122",
+    "description": "Kami mengembangkan portal web dan platform digital yang dirancang khusus untuk kebutuhan komersial, baik itu untuk mempermudah interaksi antara pelanggan dan penyedia layanan, atau untuk mendukung kegiatan bisnis lainnya. Dengan pendekatan desain yang user-friendly dan responsif, platform kami dirancang untuk memberikan pengalaman digital yang optimal dan meningkatkan keterlibatan pengguna."
+  },
+  {
+    "id": "management-consultancy",
+    "title": "Aktivitas Konsultasi Manajemen Lainnya",
+    "kbli": "Kode KBLI: 70209",
+    "description": "MekanikIT tidak hanya berfokus pada teknologi, tetapi juga memberikan layanan konsultasi manajemen untuk membantu perusahaan merancang strategi dan sistem yang efisien. Kami memberikan wawasan dan solusi untuk meningkatkan kinerja operasional, perencanaan jangka panjang, serta mengoptimalkan pengelolaan proyek dan sumber daya manusia di perusahaan klien."
+  }
+]
