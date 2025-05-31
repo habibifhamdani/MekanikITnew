@@ -71,7 +71,7 @@
         class="container-xxl d-flex flex-column justify-content-center align-items-center text-center"
       >
         <h1 class="h1_hero">
-          Solusi <span style="color: var(--tertiary_darker)">digital</span> andalan untuk
+          Solusi <span style="color: var(--accent)">digital</span> andalan untuk
           efisiensi berkelanjutan
         </h1>
         <span style="height: 20px"></span>
@@ -133,8 +133,8 @@
     <section id="services">
       <div class="services pb-5">
         <div class="container-lg d-flex flex-column align-items-center pt-5 pb-5 pe-0 ps-0" style="max-width: 1140px;">
-          <h1 class="h1_hero mb-5 text-center">
-            <span style="color: #60caf6">Jasa</span> yang kami sediakan
+          <h1 class="h1_hero mb-5 px-2 text-center">
+            <span style="color: var(--accent)">Jasa</span> yang kami sediakan
           </h1>
           <p class="p1 container-lg p-lg-0 px-4">
             Kami adalah MekanikIT, perusahaan pengembangan perangkat lunak yang
@@ -317,10 +317,10 @@
     <section id="contact">
       <div class="container-xxl p-lg-5 p-0 mb-5">
         <div class="contact d-flex flex-column ps-4 pt-5 pb-5 pe-4">
-          <h1 class="h1_hero mb-5" style="font-size: 56px; color: white; ">Hubungi kami!</h1>
+          <h1 class="h1_hero mb-5" style="font-size: 56px;">Hubungi kami!</h1>
           <p class="p1">
             Untuk setiap pertanyaan anda, silakan kirim surel ke
-            <a href="mailto:admin@mekanikit.com" class="fw-bold" style="color: white;">admin@mekanikit.com</a>
+            <a href="mailto:admin@mekanikit.com" class="fw-bold contact_link" style="color: white;">admin@mekanikit.com</a>
           </p>
 
           <form action="send.php" method="POST" class="mt-4 d-flex flex-column">
@@ -568,22 +568,32 @@
           const targetContentElement = document.getElementById(targetContentId);
 
           if (!targetContentElement) {
-            console.warn(`Mobile content for service ID "${serviceId}" not found for activation.`);
+            console.warn(`MOBILE_ACCORDION: Content for service ID "${serviceId}" not found.`);
             return;
           }
 
+          console.log(`MOBILE_ACCORDION: Activating accordion for ${targetContentId}.`);
+
+          // Update accordion states: open target, close others
           allMobileDropdownContents.forEach(contentEl => {
             const button = contentEl.previousElementSibling;
             const icon = button ? button.querySelector('i') : null;
 
             if (contentEl.id === targetContentId) {
-              contentEl.style.maxHeight = contentEl.scrollHeight + "px";
+              // Set maxHeight to open the target. scrollHeight gives the content's natural height.
+              const currentScrollHeight = contentEl.scrollHeight;
+              contentEl.style.maxHeight = currentScrollHeight + "px";
+              // console.log(`MOBILE_ACCORDION: Opening ${contentEl.id}, scrollHeight: ${currentScrollHeight}, new maxHeight: ${contentEl.style.maxHeight}`);
               if (icon) {
                 icon.classList.remove('bi-arrow-down-square');
                 icon.classList.add('bi-arrow-up-square');
               }
             } else {
-              contentEl.style.maxHeight = null;
+              // If this element was open, log that we're closing it
+              // if (contentEl.style.maxHeight && contentEl.style.maxHeight !== "0px" && contentEl.style.maxHeight !== null) {
+              //   console.log(`MOBILE_ACCORDION: Closing ${contentEl.id}`);
+              // }
+              contentEl.style.maxHeight = null; // Reverts to CSS max-height: 0, triggering closing animation
               if (icon) {
                 icon.classList.remove('bi-arrow-up-square');
                 icon.classList.add('bi-arrow-down-square');
@@ -591,15 +601,35 @@
             }
           });
 
+          // Scroll to the associated button *after* states are updated and animations have had time to progress
           const targetButtonId = `service2-btn-${serviceId}`;
           const targetButtonElement = document.getElementById(targetButtonId);
+
           if (targetButtonElement) {
-            setTimeout(() => { 
-              const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
-              const elementPosition = targetButtonElement.getBoundingClientRect().top + window.pageYOffset;
-              const offsetPosition = elementPosition - navbarHeight - 20; // 20px extra padding
-              window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            }, 100); // Increased delay
+            // Wait for CSS transitions to substantially complete (CSS transition is 0.35s)
+            setTimeout(() => {
+              console.log(`MOBILE_ACCORDION_SCROLL: Attempting to scroll to button ${targetButtonId} after delay.`);
+              const navbarElement = document.querySelector('.navbar');
+              // Provide a default navbar height if navbarElement isn't found for some reason, though it should be.
+              const navbarHeight = navbarElement ? navbarElement.offsetHeight : 80; 
+
+              const buttonRect = targetButtonElement.getBoundingClientRect();
+              const buttonAbsoluteTop = buttonRect.top + window.pageYOffset;
+              const offsetPosition = buttonAbsoluteTop - navbarHeight - 20; // 20px extra padding
+
+              console.log(`MOBILE_ACCORDION_SCROLL: Navbar height: ${navbarHeight}`);
+              console.log(`MOBILE_ACCORDION_SCROLL: Button rect.top (viewport): ${buttonRect.top}`);
+              console.log(`MOBILE_ACCORDION_SCROLL: window.pageYOffset: ${window.pageYOffset}`);
+              console.log(`MOBILE_ACCORDION_SCROLL: Calculated button absolute top: ${buttonAbsoluteTop}`);
+              console.log(`MOBILE_ACCORDION_SCROLL: Target scroll position: ${offsetPosition}`);
+
+              window.scrollTo({
+                top: offsetPosition,
+                behavior: 'smooth'
+              });
+            }, 400); // Increased delay to 400ms (CSS transition is 350ms)
+          } else {
+            console.warn(`MOBILE_ACCORDION_SCROLL: Target button ${targetButtonId} not found for scrolling.`);
           }
         };
 
@@ -620,17 +650,67 @@
           if (window.innerWidth <= 1200) { // Mobile view
             window.activateMobileServiceAccordion(service.id);
             // Scrolling is handled within activateMobileServiceAccordion
-          } else { // Desktop view
-            window.displayServiceInDesktopView(service.id);
-            const desktopButtonElement = document.getElementById(`service1-btn-${service.id}`);
-            if (desktopButtonElement) {
-                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 80;
-                const elementPosition = desktopButtonElement.getBoundingClientRect().top + window.pageYOffset;
-                const offsetPosition = elementPosition - navbarHeight - 20; // 20px extra padding
-                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
-            } else if (servicesSection) {
-                servicesSection.scrollIntoView({ behavior: 'smooth' });
-            }
+            } else { // Desktop view
+              window.displayServiceInDesktopView(service.id); // Updates content and sets active button for the CLICKED service
+
+              setTimeout(() => {
+                  const clickedButtonId = `service1-btn-${service.id}`;
+                  const clickedButtonElement = document.getElementById(clickedButtonId);
+                  const navbarElement = document.querySelector('.navbar');
+                  const servicesSection = document.getElementById('services');
+                  
+                  // Ensure service1ButtonsContainer is defined and accessible in this scope
+                  // It should be defined at the top of your DOMContentLoaded listener
+                  // const service1ButtonsContainer = document.getElementById("service1_buttons_container"); 
+
+                  if (!clickedButtonElement) {
+                      console.warn("DESKTOP_SCROLL: Clicked service button NOT FOUND:", clickedButtonId);
+                      if (servicesSection) servicesSection.scrollIntoView({ behavior: 'smooth' });
+                      return;
+                  }
+                  if (!navbarElement) {
+                      console.warn("DESKTOP_SCROLL: Navbar element not found. Cannot calculate precise offset.");
+                      // Fallback: scroll clicked button to top of viewport (might be under navbar)
+                      clickedButtonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                      return;
+                  }
+
+                  const allDesktopButtons = Array.from(service1ButtonsContainer.querySelectorAll('.btn_service'));
+                  const numButtons = allDesktopButtons.length;
+                  let scrollTargetButtonElement = clickedButtonElement; // Default to the actually clicked button
+
+                  if (numButtons >= 4) {
+                      const targetIndex = allDesktopButtons.findIndex(btn => btn.id === clickedButtonId);
+
+                      // If the clicked button is one of the last three (index numButtons-3, numButtons-2, or numButtons-1)
+                      if (targetIndex !== -1 && targetIndex >= numButtons - 3) {
+                          const fourthLastButtonIndex = numButtons - 4;
+                          if (allDesktopButtons[fourthLastButtonIndex]) {
+                              scrollTargetButtonElement = allDesktopButtons[fourthLastButtonIndex];
+                              console.log(`DESKTOP_SCROLL: Adjusting scroll. Clicked: ${clickedButtonId}, Scrolling to 4th-last: ${scrollTargetButtonElement.id}`);
+                          }
+                      }
+                  }
+
+                  // Now calculate scroll position based on the scrollTargetButtonElement
+                  console.log("DESKTOP_SCROLL: Final scroll target button:", scrollTargetButtonElement.id);
+                  const navbarHeight = navbarElement.offsetHeight;
+                  const buttonRect = scrollTargetButtonElement.getBoundingClientRect();
+                  const buttonAbsoluteTop = buttonRect.top + window.pageYOffset;
+                  const offsetPosition = buttonAbsoluteTop - navbarHeight - 20; // 20px extra padding
+
+                  console.log("DESKTOP_SCROLL: Navbar height:", navbarHeight);
+                  console.log("DESKTOP_SCROLL: Target button rect.top (viewport):", buttonRect.top);
+                  console.log("DESKTOP_SCROLL: window.pageYOffset:", window.pageYOffset);
+                  console.log("DESKTOP_SCROLL: Target button absolute top:", buttonAbsoluteTop);
+                  console.log("DESKTOP_SCROLL: Final target scroll position (offsetPosition):", offsetPosition);
+
+                  window.scrollTo({
+                      top: offsetPosition,
+                      behavior: 'smooth'
+                  });
+
+              }, 0); // setTimeout
           }
         };
 

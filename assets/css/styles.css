@@ -1,6 +1,7 @@
 :root {
     --primary: #0181B0;
-    --accent: #fb8587 ;
+    --accent: #fb8587;
+    /* --accent: #ff415c */
     --accent2: #60CAF6;
     --tertiary: #434343;
     --tertiary_lighter: #515151;
@@ -175,7 +176,7 @@ body p {
 .btn_hero1:hover {
   height: auto;
   width: auto;
-  color: #ff415c;
+  color: var(--accent);
   background-color: transparent;
   text-decoration: none;
   border: 2px solid #ff415c;
@@ -388,12 +389,14 @@ body p {
     color: var(--accent2);
 }
 
-.contact a {
+.contact_link {
     text-decoration: none;
     color: var(--accent);
 }
 
-
+.contact_link:hover {
+    color: var(--accent);
+}
 
 
 .footer {
