@@ -315,6 +315,7 @@
       </div>
     </section>
     <section id="contact">
+      <div id="form-status-message" style="display:none; text-align: center; padding: 15px; margin-bottom: 20px; border-radius: 5px; font-weight: bold;"></div>
       <div class="container-xxl p-lg-5 p-0 mb-5">
         <div class="contact d-flex flex-column ps-4 pt-5 pb-5 pe-4">
           <h1 class="h1_hero mb-5" style="font-size: 56px; color: var(--accent2);">Hubungi kami!</h1>
@@ -428,6 +429,95 @@
       </div>
     </div>
     </div>
+
+    <!-- contact display text after send.php -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          console.log("INDEX.HTML: DOMContentLoaded event fired.");
+          console.log("INDEX.HTML: Initial window.location.href:", window.location.href);
+          console.log("INDEX.HTML: Initial window.location.hash:", window.location.hash);
+
+          const params = new URLSearchParams(window.location.search);
+          const status = params.get('status');
+          const messageText = params.get('message');
+          const messageDiv = document.getElementById('form-status-message');
+          let queryParamsWerePresent = !!(status && messageText);
+
+          // Display Status Message (if any) - Keep this part to see if it interferes
+          if (queryParamsWerePresent && messageDiv) {
+              console.log("INDEX.HTML: Status parameters found. Displaying message.");
+              messageDiv.textContent = decodeURIComponent(messageText);
+              if (status === 'success') {
+                  messageDiv.style.backgroundColor = '#d4edda';
+                  messageDiv.style.color = '#155724';
+                  messageDiv.style.border = '1px solid #c3e6cb';
+              } else if (status === 'error') {
+                  messageDiv.style.backgroundColor = '#f8d7da';
+                  messageDiv.style.color = '#721c24';
+                  messageDiv.style.border = '1px solid #f5c6cb';
+              }
+              messageDiv.style.display = 'block';
+              // Not hiding it automatically for now, to see its impact
+          } else {
+              console.log("INDEX.HTML: No status parameters found, or messageDiv missing.");
+          }
+
+          // Attempt to scroll after a noticeable delay to ensure everything has settled
+          setTimeout(() => {
+              console.log("INDEX.HTML: --- Timeout for Scrolling and URL Clean ---");
+              console.log("INDEX.HTML: Timeout - window.location.hash:", window.location.hash);
+
+              if (window.location.hash === '#contact') {
+                  const contactSection = document.getElementById('contact');
+                  const navbarElement = document.querySelector('.navbar'); // Your navbar selector
+
+                  if (contactSection) {
+                      console.log("INDEX.HTML: Timeout - #contact section FOUND.");
+                      if (navbarElement) {
+                          console.log("INDEX.HTML: Timeout - Navbar element FOUND.");
+                          const navbarHeight = navbarElement.offsetHeight;
+                          const elementRect = contactSection.getBoundingClientRect();
+                          const elementAbsoluteTop = elementRect.top + window.pageYOffset;
+                          const targetScrollPosition = elementAbsoluteTop - navbarHeight - 20; // 20px padding
+
+                          console.log("INDEX.HTML: Timeout - Navbar Height:", navbarHeight);
+                          console.log("INDEX.HTML: Timeout - Contact Section Rect Top (Viewport Relative):", elementRect.top);
+                          console.log("INDEX.HTML: Timeout - Window PageYOffset:", window.pageYOffset);
+                          console.log("INDEX.HTML: Timeout - Contact Section Absolute Top on Page:", elementAbsoluteTop);
+                          console.log("INDEX.HTML: Timeout - Calculated Target Scroll Position:", targetScrollPosition);
+
+                          console.log("INDEX.HTML: Timeout - Attempting scroll with behavior: 'auto'");
+                          window.scrollTo({
+                              top: targetScrollPosition,
+                              behavior: 'auto' // Use 'auto' for an instant jump for testing
+                          });
+                          // After testing with 'auto', you can try 'smooth' again
+                          // window.scrollTo({ top: targetScrollPosition, behavior: 'smooth' });
+
+                      } else {
+                          console.error("INDEX.HTML: Timeout - Navbar element (.navbar) NOT FOUND! Cannot calculate offset. Scrolling to section top directly.");
+                          contactSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+                      }
+                  } else {
+                      console.error("INDEX.HTML: Timeout - #contact section NOT FOUND in DOM for scrolling!");
+                  }
+              } else {
+                  console.log("INDEX.HTML: Timeout - Hash is not #contact. No explicit scroll performed.");
+              }
+
+              // Clean URL: Remove query parameters but KEEP THE HASH.
+              if (queryParamsWerePresent && window.history.replaceState) {
+                  const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.hash;
+                  window.history.replaceState({ path: cleanURL }, '', cleanURL);
+                  console.log("INDEX.HTML: Timeout - URL cleaned to:", cleanURL);
+              } else {
+                  console.log("INDEX.HTML: Timeout - No query parameters were present, URL not cleaned by this script.");
+              }
+              console.log("INDEX.HTML: --- End of Timeout for Scrolling and URL Clean ---");
+
+          }, 500); // Increased delay to 500ms for more settling time
+      });
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", () => {
