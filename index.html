@@ -20,6 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body>
@@ -316,60 +317,76 @@
     </section>
     <section id="contact">
       <div id="form-status-message" style="display:none; text-align: center; padding: 15px; margin-bottom: 20px; border-radius: 5px; font-weight: bold;"></div>
-      <div class="container-xxl p-lg-5 p-0 mb-5">
-        <div class="contact d-flex flex-column ps-4 pt-5 pb-5 pe-4">
-          <h1 class="h1_hero mb-5" style="font-size: 56px; color: var(--accent2);">Hubungi kami!</h1>
-          <p class="p1">
-            Untuk setiap pertanyaan anda, silakan kirim surel ke
-            <a href="mailto:admin@mekanikit.com" class="fw-bold contact_link" style="color: white;">admin@mekanikit.com</a>
-          </p>
+        <div class="container-xxl p-lg-5 p-0 mb-5">
+          <div class="contact d-flex flex-column ps-4 pt-5 pb-5 pe-4">
+              <h1 class="h1_hero mb-5" style="font-size: 56px; color: var(--accent2);">Hubungi kami!</h1>
+              <p class="p1">
+                  Untuk setiap pertanyaan anda, silakan kirim surel ke
+                  <a href="mailto:admin@mekanikit.com" class="fw-bold contact_link" style="color: white;">admin@mekanikit.com</a>
+              </p>
 
-          <form action="send.php" method="POST" class="mt-4 d-flex flex-column">
-            <div class="mb-3">
-              <label for="nama" class="form-label p1"
-                >Nama<span style="color: red">*</span></label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="nama"
-                name="nama"
-                required
-              />
-            </div>
+              <form action="send.php" method="POST" id="contactForm" class="mt-4 d-flex flex-column">
+                  <div class="mb-3">
+                      <label for="nama" class="form-label p1">Nama<span style="color: red">*</span></label>
+                      <input type="text" class="form-control" id="nama" name="nama" required />
+                  </div>
 
-            <div class="mb-3">
-              <label for="email" class="form-label p1"
-                >Surel<span style="color: red">*</span></label
-              >
-              <input
-                type="email"
-                class="form-control"
-                id="email"
-                name="email"
-                required
-              />
-            </div>
+                  <div class="mb-3">
+                      <label for="email" class="form-label p1">Surel<span style="color: red">*</span></label>
+                      <input type="email" class="form-control" id="email" name="email" required />
+                  </div>
 
-            <div class="mb-3">
-              <label for="pesan" class="form-label p1"
-                >Pesan<span style="color: red">*</span></label
-              >
-              <textarea
-                class="form-control"
-                id="pesan"
-                name="pesan"
-                rows="4"
-                required
-              ></textarea>
-            </div>
+                  <div class="mb-3">
+                      <label for="pesan" class="form-label p1">Pesan<span style="color: red">*</span></label>
+                      <textarea class="form-control" id="pesan" name="pesan" rows="4" required></textarea>
+                  </div>
+                  
+                  <div class="mb-3">
+                      <div class="g-recaptcha" data-sitekey="6LeOElIrAAAAAO-HQyf31DY5Kb_zsp5yBauGQUCz"></div>
+                      <div id="recaptcha-error-message" style="color: white; display: none; margin-top: 5px; font-size: 0.9em;">
+                          Please verify you are not a robot.
+                      </div>
+                  </div>
 
-            <button type="submit" class="btn_hero1 align-self-end">
-              Kirim
-            </button>
-          </form>
-        </div>
+                  <button type="submit" class="btn_hero1 align-self-end">
+                      Kirim
+                  </button>
+              </form>
+          </div>
       </div>
+      <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+            const recaptchaErrorMessage = document.getElementById('recaptcha-error-message');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    // Check if grecaptcha object is loaded (it might take a moment after page load)
+                    if (typeof grecaptcha === 'undefined' || !grecaptcha) {
+                        console.warn('reCAPTCHA script not loaded yet.');
+                        // Optionally, you could display a generic error or just let server-side handle it
+                        // For now, we'll let it submit and server-side will catch it.
+                        return; 
+                    }
+
+                    const recaptchaResponse = grecaptcha.getResponse();
+
+                    if (recaptchaResponse.length === 0) {
+                        // reCAPTCHA not verified
+                        event.preventDefault(); // IMPORTANT: Stop form submission
+                        if (recaptchaErrorMessage) {
+                            recaptchaErrorMessage.style.display = 'block';
+                        }
+                    } else {
+                        // reCAPTCHA verified, allow form submission
+                        if (recaptchaErrorMessage) {
+                            recaptchaErrorMessage.style.display = 'none';
+                        }
+                    }
+                });
+            }
+        });
+        </script>
     </section>
     <div class="footer">
       <div class="d-flex flex-column align-items-center px-xl-0 px-3 py-5">
@@ -429,6 +446,81 @@
       </div>
     </div>
     </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          const params = new URLSearchParams(window.location.search);
+          const status = params.get('status');
+          const messageText = params.get('message');
+          const messageDiv = document.getElementById('form-status-message');
+          let queryParamsWerePresent = !!(status || messageText || params.has('nama_val')); // Check if any relevant param was there
+
+          // Repopulate form fields if values are present from a previous attempt
+          const inputNama = document.getElementById('nama');
+          const inputEmail = document.getElementById('email');
+          const inputPesan = document.getElementById('pesan');
+
+          const namaVal = params.get('nama_val');
+          const emailVal = params.get('email_val');
+          const pesanVal = params.get('pesan_val');
+
+          if (namaVal && inputNama) {
+              inputNama.value = decodeURIComponent(namaVal);
+          }
+          if (emailVal && inputEmail) {
+              inputEmail.value = decodeURIComponent(emailVal);
+          }
+          if (pesanVal && inputPesan) {
+              // For textarea, it's better to set textContent or innerText
+              // but .value also works for most browsers.
+              inputPesan.value = decodeURIComponent(pesanVal);
+          }
+
+          // Display Status Message (if any)
+          if (status && messageText && messageDiv) {
+              // queryParamsWerePresent is already true if we are here
+              messageDiv.textContent = decodeURIComponent(messageText);
+
+              if (status === 'success') {
+                  messageDiv.style.backgroundColor = '#d4edda';
+                  messageDiv.style.color = '#155724';
+                  messageDiv.style.border = '1px solid #c3e6cb';
+                  // Optionally clear form fields on success if not already cleared
+                  // if (inputNama) inputNama.value = '';
+                  // if (inputEmail) inputEmail.value = '';
+                  // if (inputPesan) inputPesan.value = '';
+              } else if (status === 'error') {
+                  messageDiv.style.backgroundColor = '#f8d7da';
+                  messageDiv.style.color = '#721c24';
+                  messageDiv.style.border = '1px solid #f5c6cb';
+              }
+              messageDiv.style.display = 'block';
+
+              setTimeout(() => {
+                  messageDiv.style.display = 'none';
+              }, 7000);
+          }
+
+          // Explicitly Scroll to #contact and Clean URL
+          setTimeout(() => {
+              if (window.location.hash === '#contact') {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                      const navbarElement = document.querySelector('.navbar');
+                      const navbarHeight = navbarElement ? navbarElement.offsetHeight : 80;
+                      const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+                      const offsetPosition = elementPosition - navbarHeight - 20;
+                      window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                  }
+              }
+
+              if (queryParamsWerePresent && window.history.replaceState) {
+                  const cleanURL = window.location.protocol + "//" + window.location.host + window.location.pathname + window.location.hash;
+                  window.history.replaceState({ path: cleanURL }, '', cleanURL);
+              }
+          }, 100);
+      });
+      </script>
 
     <!-- contact display text after send.php -->
     <script>
