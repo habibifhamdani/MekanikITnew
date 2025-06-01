@@ -7,7 +7,7 @@ require 'vendor/autoload.php';
 // --- IMPORTANT: Replace with your actual sending email and App Password ---
 define('GMAIL_USER', 'habibifhamdani@gmail.com'); // Your Gmail address
 define('GMAIL_PASSWORD', 'namq lnrs hskt pvpm'); // Your Gmail App Password (16 characters)
-define('RECIPIENT_EMAIL', 'habibifhamdani@gmail.com'); // Where the email should go
+define('RECIPIENT_EMAIL', 'admin@mekanikit.com'); // Where the email should go
 define('SENDER_NAME', 'MekanikIT Contact Form');     // Name that appears as sender
 // --- IMPORTANT: End of credentials section ---
 
@@ -63,7 +63,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } catch (Exception $e) {
         // Log detailed error to server logs for debugging
         error_log("Mailer Error: " . $mail->ErrorInfo); 
-        // CORRECTED URL STRUCTURE: Query params FIRST, then #anchor
         header("Location: " . $baseRedirectPage . "?status=error&message=" . urlencode("Tidak berhasil mengirim pesan, silakan dicoba pada lain waktu.") . "#contact");
         exit;
     }
